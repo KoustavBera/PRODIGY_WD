@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prodigy Infotech | TASK@2_STOP_WATCH</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">00:00:00</div>
+    </div>
+  </body>
+  <script>
+    const stopWatch = (hour, min, sec) => {
+      while (hour >= 0) {
+        while (min <= 59 && min >= 0) {
+          while (sec <= 59 && sec >= 0) {
+            setTimeout((hour, min, sec) => {
+              document.querySelector(".box").innerHTML = `${hour
+                .toString()
+                .padStart(2, "0")}:${min.toString().padStart(2, "0")}:${sec
+                .toString()
+                .padStart(2, "0")}`;
+            }, 1000);
+            sec--;
+          }
+          min--;
+        }
+        hour--;
+      }
+    };
+
+    stopWatch(0, 0, 10);
+  </script>
+</html>

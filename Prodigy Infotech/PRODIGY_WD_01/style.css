@@ -1,0 +1,28 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Header Styles */
+h1 {
+  font-size: 2em;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* More styles can be added here */
+#nav {
+  height: 100px;
+  width: 100%;
+  position: fixed;
+}
