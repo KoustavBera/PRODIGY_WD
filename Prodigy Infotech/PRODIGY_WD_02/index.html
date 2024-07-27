@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Prodigy Infotech | WD-Task 2 | Stopwatch</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="top">
+      <button class="modes">
+        <i class="ri-moon-fill"></i>
+      </button>
+    </div>
+    <div class="main">
+    
+    <div class="container">
+      <div class="stopwatch">
+        <h1 id="display-time">00:00:00</h1>
+        <div class="buttons">
+          <i class="ri-pause-line btns" onclick="watchStop()" ></i>
+          <i class="ri-play-fill btns" onclick="watchStart()"></i>
+          <i class="ri-repeat-line btns" onclick="watchReset()" ></i>
+        </div>
+      </div>
+    </div>
+    <script>
+
+let [seconds,minutes,hours] = [0,0,0]; //array
+let displayTime=document.querySelector("#display-time");
+
+let timer = null;
+
+let stopWatch = ()=>{
+  seconds++;
+  if(seconds == 60){
+    seconds = 0;
+    minutes++;
+    if(minutes == 60){
+      minutes=0;
+      hours++;
+    }
+  }
+
+
+let h= hours <10? "0"+hours:hours;
+let m= minutes <10? "0"+minutes:minutes;
+let s= seconds <10? "0"+seconds:seconds;
+
+  displayTime.innerHTML = h + ":"+ m +":"+s;
+}
+
+let watchStart = ()=>{
+  displayTime.classList.remove("open");
+  document.querySelector(".ri-play-fill").style.transition="transform 0.199s";
+ document.querySelector(".ri-play-fill").style.transform="scale(1.45)";
+ setTimeout(()=>{
+  document.querySelector(".ri-play-fill").style.transform="scale(1)";
+
+ },199);
+
+
+ 
+
+  if(timer != null){
+    clearInterval(timer);
+  }
+  
+timer = setInterval(stopWatch,1000);
+}
+
+
+let watchStop = ()=>{
+  displayTime.classList.add("open");
+  clearInterval(timer);
+  document.querySelector(".ri-pause-line").style.transition="transform 0.199s";
+ document.querySelector(".ri-pause-line").style.transform="scale(1.45)";
+ setTimeout(()=>{
+  document.querySelector(".ri-pause-line").style.transform="scale(1)";
+
+ },199);
+
+ 
+}
+
+let watchReset = () =>{
+  displayTime.innerHTML = "00"+ ":"+ "00" +":"+"00";
+  [seconds,minutes,hours] = [0,0,0];
+  watchStart();
+}
+
+let toggleModes = document.querySelector(".modes");
+toggleModes.addEventListener("click",()=>{
+  let on = document.querySelector(".main").classList.toggle("night");
+    document.querySelector(".container").classList.toggle("night2");
+    document.querySelector(".stopwatch h1").classList.toggle("night3");
+    document.querySelectorAll(".btns").forEach(btn =>{
+      btn.classList.toggle("night4");
+    })
+  
+ let isOn=document.querySelector(".main").classList.contains("night");
+ let icon = document.querySelector(".modes i")
+icon.setAttribute("class", isOn ?"ri-sun-line":"ri-moon-fill");
+})
+
+    </script>
+  </body>
+</html>

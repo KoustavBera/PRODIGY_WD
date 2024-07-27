@@ -1,0 +1,3 @@
+   <i class="ri-play-fill"></i>
+    <i class="ri-pause-line"></i>
+    <i class="ri-repeat-line"></i>

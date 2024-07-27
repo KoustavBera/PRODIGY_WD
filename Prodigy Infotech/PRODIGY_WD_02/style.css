@@ -1,0 +1,112 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Styles */
+body,
+html {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 100%;
+  width: 100%;
+}
+
+/* Header Styles */
+h1 {
+  font-size: 2em;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Main Styles */
+.modes {
+  background-color: transparent;
+  font-size: 3rem;
+  border: none;
+  outline: none;
+}
+.main.night {
+  background-color: rgb(27, 33, 45);
+}
+.main {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh; /* Ensure the main element takes up the full viewport height */
+}
+
+/* Container Styles */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(to right, #00c9ff, #92fe9d);
+  width: 20em;
+  height: 10em;
+
+  border-radius: 30px;
+}
+.container.night2 {
+  background: black;
+}
+.buttons {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.stopwatch h1 {
+  color: #fff;
+  font-size: 250%;
+}
+.stopwatch h1.night3 {
+  color: rgb(255, 115, 0);
+}
+.stopwatch h1.open {
+  animation: wink;
+  animation-duration: 0.98s;
+  animation-iteration-count: infinite;
+}
+.btns {
+  font-size: 1.5em;
+  margin: 10px 20px;
+  cursor: pointer;
+  color: rgb(15, 8, 16);
+}
+.btns.night4 {
+  color: rgb(255, 115, 0);
+}
+@keyframes wink {
+  50% {
+    opacity: 0.5;
+  }
+  0%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (width > 789px) {
+  .container {
+    width: 45em;
+    height: 20em;
+    border-radius: 30px;
+  }
+
+  .stopwatch h1 {
+    font-size: 440%;
+  }
+  .btns {
+    font-size: 2.5em;
+    margin: 1em 31px;
+    margin-top: 2em;
+  }
+}
