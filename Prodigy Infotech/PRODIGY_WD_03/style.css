@@ -43,7 +43,7 @@ body {
 }
 .heading {
   text-align: center;
-  padding: 5%;
+  /* padding: 5%; */
   /* margin: 4rem; */
 }
 .heading h1 {
@@ -57,7 +57,7 @@ body {
 }
 .winner {
   font-size: 1.8em;
-  margin: 5%;
+  /* margin: 5%; */
   font-family: "Fira Code";
   font-weight: 100;
 }
@@ -98,20 +98,25 @@ body {
 }
 @media (min-width: 1000px) {
   body {
-    padding: 3em 8em;
+    padding: 1em 8em;
   }
   .col {
     height: 6rem;
     width: 6rem;
   }
+  .heading {
+    display: inline;
+    margin-top: 3%;
+  }
   .heading h1 {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 200;
   }
   .winner {
-    font-size: 2.5em;
-    margin: 5%;
+    font-size: 1.7rem;
+    margin: 2%;
     font-family: "Fira Code";
     font-weight: 100;
   }
 }
+
