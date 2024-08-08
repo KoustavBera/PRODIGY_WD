@@ -4,8 +4,9 @@ let gameOver = false;
 function handleClick(el) {
   if (gameOver) return;
   const id = Number(el.id);
-  array[id] = currPlayer;
-  if (el.innerText == "") {
+  if (el.innerText === "") {
+    array[id] = currPlayer;
+
     el.innerText = array[id];
     if (!checkWinner()) {
       currPlayer = currPlayer == "X" ? "O" : "X";
@@ -16,10 +17,10 @@ function handleClick(el) {
 }
 
 function handleDblClick(el) {
-  const id = el.id;
-  array[id] = null;
-  el.innerText = "";
-  console.log("After removal Array:", array);
+  // const id = el.id;
+  // array[id] = null;
+  // el.innerText = "";
+  // console.log("After removal Array:", array);
 }
 
 function checkWinner() {
@@ -61,3 +62,4 @@ function Restart() {
   ).innerHTML = `<p class="custom-style">${letsPlay}</p>`;
   console.log(array);
 }
+
